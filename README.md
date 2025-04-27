@@ -1,5 +1,5 @@
 # serialpuny
-Puny sized  BitBanged Uart Library
+small sized  BitBanged Uart Library
 
 Functions:
 
