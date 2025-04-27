@@ -28,7 +28,7 @@ uint8_t puny_got(void);
 void puny_show_speed(uint32_t rate);
 void puny_sentence(const char *str);
 void puny_numbers(int number);
-void delay_us(uint16_t us);
+
 
 
 #ifdef __cplusplus
