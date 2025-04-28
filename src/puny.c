@@ -4,7 +4,7 @@ uint16_t Baud = 104;
 static uint16_t baud_delay = 0;
 
 void puny_show_speed(uint32_t rate) {
-    Baud = (F_CPU / 16 / rate) - 1;
+    Baud = (1000000/rate);
     baud_delay = (Baud);
 }
 
