@@ -16,17 +16,17 @@ void puny_wakeup() {
 
 void puny_throw(uint8_t data) {
     Tx_PORT &= ~(1 << Tx_BIT);  // Start bit
-    delayMicroseconds(baud_delay);  // Change _delay_us to delayMicroseconds
+    delayMicroseconds(baud_delay);  
     for (uint8_t b = 0; b < 8; b++) {
         if (data & (1 << b))
             Tx_PORT |= (1 << Tx_BIT);
         else
             Tx_PORT &= ~(1 << Tx_BIT);
         
-        delayMicroseconds(baud_delay);  // Change _delay_us to delayMicroseconds
+        delayMicroseconds(baud_delay);  
     }
     Tx_PORT |= (1 << Tx_BIT);  // Stop bit
-    delayMicroseconds(baud_delay);  // Change _delay_us to delayMicroseconds
+    delayMicroseconds(baud_delay);  
 }
 
 uint8_t puny_got() {
@@ -36,7 +36,7 @@ uint8_t puny_got() {
     for (uint8_t b = 0; b < 8; b++) {
         if (Rx_STATE & (1 << Rx_BIT))
             data |= (1 << b);
-        delayMicroseconds(baud_delay);  // Change _delay_us to delayMicroseconds
+        delayMicroseconds(baud_delay);  
     }
     delayMicroseconds(baud_delay);  // Stop bit
     return data;
